@@ -26,7 +26,7 @@ import com.example.allocinedome.model.MovieShowtimes;
 import com.example.allocinedome.rest.ApiHelper;
 import com.example.allocinedome.adapter.MyAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnMovieClickedListener{
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -40,13 +40,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-
         mRecyclerView.setHasFixedSize(true);
         
         ApiHelper.getInstance().getNewsApi().getFile().enqueue(new Callback<Cinema>() {
             @Override
             public void onResponse(Call<Cinema> call, Response<Cinema> response) {
-
                 mLayoutManager = new LinearLayoutManager(mRecyclerView.getContext());
                 mRecyclerView.setLayoutManager(mLayoutManager);
 
@@ -69,5 +67,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onMovieClicked(MovieShowtimes movie) {
+        Log.d("MainActivity", "CLIC");
+    }
 }
 

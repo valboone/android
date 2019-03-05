@@ -10,7 +10,8 @@ public class ApiHelper {
 
     private ApiHelper() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://etudiants.openium.fr/pam/")
+                .baseUrl("https://api.myjson.com/")
+               // .baseUrl("http://etudiants.openium.fr/pam/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         newsApi = retrofit.create(NewsApi.class);

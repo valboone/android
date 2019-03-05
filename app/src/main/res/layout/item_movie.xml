@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -7,7 +8,89 @@
     <TextView
         android:id="@+id/text_item_movie"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/posterView"
+        android:layout_toRightOf="@+id/posterView"
         android:textSize="15sp" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/posterView"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        app:srcCompat="@android:color/holo_blue_dark" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/text_item_movie"
+        android:layout_alignLeft="@+id/text_item_movie"
+        android:layout_alignTop="@+id/text_item_movie"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="75dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBarUser"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/text_item_movie"
+        android:layout_alignLeft="@+id/text_item_movie"
+        android:layout_alignTop="@+id/text_item_movie"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="99dp" />
+
+    <TextView
+        android:id="@+id/pressRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/text_item_movie"
+        android:layout_alignLeft="@+id/text_item_movie"
+        android:layout_alignTop="@+id/text_item_movie"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="72dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/userRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/pressRating"
+        android:layout_alignLeft="@+id/pressRating"
+        android:layout_alignTop="@+id/text_item_movie"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="99dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_item_movie"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/posterView"
+        android:layout_toRightOf="@+id/posterView"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/text_item_movie"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/listDivider" />
+
+</RelativeLayout>

@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface NewsApi {
-    @GET("cine.json")
+   // @GET("cine.json")
+    @GET("https://etudiants.openium.fr/pam/cine.json")
     Call<Cinema> getFile();
 }
